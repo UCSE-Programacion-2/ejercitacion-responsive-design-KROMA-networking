@@ -181,6 +181,66 @@ footer ul {
     width: 100px;
     right: 0;
 }
-
 /*** Responsive */
 
+/* 1. Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    /* El menú se centra */
+    nav ul {
+        justify-content: center;
+    }
+
+    /* Las secciones pasan a tener elementos más anchos */
+    section>div, #card-section>div {
+        flex-direction: column; /* Apilamos las tarjetas */
+        align-items: center;
+    }
+
+    .card {
+        width: 80%; /* En tablet las tarjetas ocupan más espacio */
+        margin: 15px 0;
+    }
+
+    .formulario, .contacto {
+        width: 100%; /* El formulario y contacto ocupan todo el ancho */
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    footer>div {
+        width: 100%;
+    }
+}
+
+/* 2. Móvil (max-width: 450px) */
+@media (max-width: 450px) {
+    header h1 {
+        font-size: 1.5rem; /* Achicamos el título para que no desborde */
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    section {
+        padding: 20px; /* Menos espacio en los bordes para el celu */
+    }
+
+    .card {
+        width: 100%; /* La tarjeta ocupa todo el ancho del celular */
+        margin: 10px 0;
+    }
+
+    form {
+        padding: 20px 20px 5px; /* Reducimos padding del formulario */
+    }
+
+    .news-letter>input[type="submit"] {
+        position: static; /* Quitamos el absoluto para que no se pise el botón */
+        width: 100%;
+        margin-top: 10px;
+    }
+}
